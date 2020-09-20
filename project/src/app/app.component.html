@@ -1,0 +1,15 @@
+<div class="container">
+
+	<list-products [hidden]="menu !== 'list'" [products]="products" (alertEvents)="addAlert($event)"
+		(removeProductsEvents)="deleteProduct($event)" (showMenuEvents)="showMenu($event)"></list-products>
+
+	<product [hidden]="menu !== 'add_item'" [products]="products" (addProductEvents)="addProduct($event)"
+		(alertEvents)="addAlert($event)" (showMenuEvents)="showMenu($event)"></product>
+
+		<br />
+	<div class="alert {{alert.type}}" *ngFor="let alert of alerts">
+		<strong> {{ alert.name }} </strong> {{ alert.description }}
+	</div>
+
+
+</div>

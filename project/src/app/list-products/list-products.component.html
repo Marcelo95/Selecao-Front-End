@@ -1,0 +1,42 @@
+<h2>Produtos</h2>
+<p>
+	Adicione ou exclua um produto :)
+</p>
+
+
+<ul class="list-group">
+	<li class="list-group-item list-group-item-action active">
+		<div class="row">
+			<div class="col-xs-1 panel-body"> ID </div>
+			<div class="col-xs-4 panel-body"> Produto </div>
+			<div class="col-xs-3 panel-body"> Preço </div>
+			<div class="col-xs-3 panel-body"> SKU </div>
+			<div class="col-xs-1 panel-body"> </div>
+		</div>
+	</li>
+</ul>
+
+
+<ul class="list-group overflow">
+	<li class="list-group-item item-product" *ngFor="let prod of products">
+		<div class="row">
+			<div class="col-xs-1 panel-body"> {{  prod.id }} </div>
+			<div class="col-xs-4 panel-body"> {{  prod.name }} </div>
+			<div class="col-xs-3 panel-body"> {{  prod.price | currency:'BRL' }} </div>
+			<div class="col-xs-3 panel-body"> {{  prod.sku }} </div>
+			<div class="col-sm-1 col-xs-12 panel-body text-right">
+				<button type="button" class="btn btn-danger text-center btn-remove" (click)="deleteProduct(prod.id, prod.name)"> <span class="glyphicon glyphicon-trash"></span> </button>
+			</div>
+		</div>
+	</li>
+
+
+</ul>
+
+<div class="row">
+	<div class="col-sm-12 text-right">
+
+		<button type="button" class="btn btn-primary text-center " (click)="showMenu('add_item')"> adicionar produto </button>
+
+	</div>
+</div>

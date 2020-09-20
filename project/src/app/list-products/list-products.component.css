@@ -1,0 +1,9 @@
+.item-product:hover {
+  cursor: pointer;
+}
+
+.overflow {
+    overflow-y: auto;
+    max-height: 346px;
+    margin-top: -18px;
+}

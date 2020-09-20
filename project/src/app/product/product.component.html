@@ -1,0 +1,34 @@
+<h2>Adicione um produto</h2>
+<p>
+	Preencha os campos para adicionar o produto.
+</p>
+<div class="well well-lg">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+		<div class="row">
+			<div class="col-sm-3 panel-body">
+				<div class="input-group">
+					<span class="input-group-addon">Produto</span>
+					<input type="text" class="form-control" ngModel [(ngModel)]="newProduct.name" required  placeholder="Nome do produto..." name="name" /></div>
+
+				</div>
+				<div class="col-sm-3 panel-body">
+					<div class="input-group">
+						<span class="input-group-addon">R$</span>
+						<input type="number" class="form-control" ngModel [(ngModel)]="newProduct.price"  required  placeholder="Digite aqui..."  name="price" /></div>
+
+					</div>
+					<div class="col-sm-3 panel-body">
+						<div class="input-group">
+							<span class="input-group-addon">SKU</span>
+							<input type="text" class="form-control" ngModel [(ngModel)]="newProduct.sku"  required  placeholder="Digite aqui..." name="sku" /></div>
+
+						</div>
+						<div class="col-sm-3 panel-body">
+							<button type="submit" class="btn btn-success btn-block">Salvar</button>
+
+						</div>
+					</div>
+	</form>
+
+	</div>
